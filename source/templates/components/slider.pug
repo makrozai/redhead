@@ -1,0 +1,17 @@
+//.container
+.slider.sliderm.o-slider
+  .o-slider__next
+    img(src="source/img/next.png", alt="")
+  .o-slider__prev
+    img(src="source/img/back.png", alt="")
+  ul.slides
+    each slid in slider
+      li
+        img(src= slid.image)
+        .caption
+          .container
+            h5.left-align Nueva serie de CERÁMICA | PORCELANA <br> "La sabiduría", en diversos acabados.
+            p.right-align 
+              a(href="#!").waves-effect.waves-light.btn.c-button__primary
+                        i.right.fas.fa-arrow-right
+                        | Descubre la serie ahora!

@@ -1,0 +1,80 @@
+include settings/variables
+include components/mixins.pug
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Tienda FitoEspinosa
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet" href="https://file.myfontastic.com/Je2qVQFHWdpjAg3hYktk9P/icons.css")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+  body
+    include blocks/header
+
+
+    .container
+      .row
+        .col.s12
+          +breadCrumbs('home','my account','addresses')
+        .col.s12.m3
+          ul.o-collapsible.collapsible(data-collapsible="accordion")
+            li.o-collapsible__item
+              .o-collapsible__header.collapsible-header.active
+                |My Account
+              .o-collapsible__body.collapsible-body
+                ul.default
+                  li.c-listCategory__item
+                    a(href="#!").u-hover__linear PERSONAL DATA
+                  li.c-listCategory__item
+                    a(href="#!").u-hover__linear ADDRESSES
+                  li.c-listCategory__item
+                    a(href="#!").u-hover__linear WISHLIST
+                  li.c-listCategory__item
+                    a(href="#!").u-hover__linear GALLERY
+        .col.s12.m9
+          h4.o-account__title MY ACCOUNT: ADDRESSES
+            a(href="#!") (LOG OUT)
+
+          +sectionAcordion('DEFAULT ADDRESSES', '')
+            .row
+              each val in [1,2,3]
+                .col.s12.m6.l4
+                  .card
+                    .card-content
+                      p Nombres y Apellidos
+                      p Direccion, Calle especifica registrada por el usuario
+                      p Ciudad, Código ZIP
+                      p Pais
+                      p Telefono: 000-000-000
+                      p United States
+                      p Phone: 987 645 321
+                      .o-card__buttons
+                        a(href="#!") Edit
+                        a(href="#!") Delete
+          +sectionAcordion('OTHER ADDRESSES', '')
+            .row
+              each val in [1]
+                .col.s12.m6.l4
+                  .card
+                    .card-content
+                      p Nombres y Apellidos
+                      p Direccion, Calle especifica registrada por el usuario
+                      p Ciudad, Código ZIP
+                      p Pais
+                      p Telefono: 000-000-000
+                      p United States
+                      p Phone: 987 645 321
+                      .o-card__buttons
+                        a(href="#!") Edit
+                        a(href="#!") Delete
+
+
+
+    include blocks/footer
+    
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="source/transpiled_js/materialize.min.js")
+    script(src="source/transpiled_js/slick.js")
+    script(src="source/transpiled_js/script.js")

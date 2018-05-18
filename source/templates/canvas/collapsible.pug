@@ -1,0 +1,188 @@
+include ../settings/variables
+include ../components/mixins
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Tienda FitoEspinosa
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet" href="https://file.myfontastic.com/Je2qVQFHWdpjAg3hYktk9P/icons.css")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+  body
+    include ../blocks/header
+    
+    .container
+      .row
+        .col.s12.m6.l4
+          .row
+            .col.s12
+              h5.c-sectionTitle Collapsible Default
+            .col.s12
+              ul.collapsible(data-collapsible="accordion")
+                li
+                  .collapsible-header
+                    i.material-icons filter_drama
+                    |First
+                  .collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li
+                  .collapsible-header
+                    i.material-icons place
+                    |Second
+                  .collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li
+                  .collapsible-header
+                    i.material-icons whatshot
+                    |Third
+                  .collapsible-body
+                    span Lorem ipsum dolor sit amet.
+        .col.s12.m6.l4
+          .row
+            .col.s12
+              h5.c-sectionTitle Collapsible Template
+            .col.s12
+              ul.o-collapsible.collapsible(data-collapsible="accordion")
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |First
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Second
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Third
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+        .col.s12.m6.l4
+          .row
+            .col.s12
+              h5.c-sectionTitle Collapsible Toggle
+            .col.s12
+              ul.o-collapsible.o-collapsible--toggle.collapsible(data-collapsible="accordion")
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |First
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Second
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Third
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+      .row
+        .col.s12.m6.l4
+          .row
+            .col.s12
+              h5.c-sectionTitle Collapsible expandable
+            .col.s12
+              ul.o-collapsible.collapsible(data-collapsible="expandable")
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header.active
+                    |First
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header.active
+                    |Second
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header.active
+                    |Third
+                  .o-collapsible__body.collapsible-body
+                    span Lorem ipsum dolor sit amet.
+        .col.s12.m6.l4
+          .row
+            .col.s12
+              h5.c-sectionTitle Collapsible List
+            .col.s12
+              ul.o-collapsible.collapsible(data-collapsible="accordion")
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header.active
+                    |First
+                  .o-collapsible__body.collapsible-body
+                    ul.default
+                      each item in category
+                        li.c-listCategory__item
+                          a(href= item.link).u-hover__linear= item.name
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Second
+                  .o-collapsible__body.collapsible-body
+                    ul.default
+                      each item in category
+                        li.c-listCategory__item
+                          a(href= item.link).u-hover__linear= item.name
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Third
+                  .o-collapsible__body.collapsible-body
+                    ul.default
+                      each item in category
+                        li.c-listCategory__item
+                          a(href= item.link).u-hover__linear= item.name
+        .col.s12.m6.l4
+          .row
+            .col.s12
+              h5.c-sectionTitle Collapsible List
+            .col.s12
+              ul.o-collapsible.collapsible(data-collapsible="accordion")
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header.active
+                    |First
+                  .o-collapsible__body.collapsible-body
+                    form
+                      ul
+                        -var val = 1;
+                        each item in category
+                          li.c-listCategory__item
+                            p
+                              input(type="checkbox", id='test'+val)
+                              label(for= 'test'+val )= item.name
+                          -val++;
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Second
+                  .o-collapsible__body.collapsible-body
+                    form
+                      ul
+                        -var val = 1;
+                        each item in category
+                          li.c-listCategory__item
+                            p
+                              input(type="checkbox", id='testa'+val)
+                              label(for= 'testa'+val )= item.name
+                          -val++;
+                li.o-collapsible__item
+                  .o-collapsible__header.collapsible-header
+                    |Third
+                  .o-collapsible__body.collapsible-body
+                    form
+                      ul
+                        -var val = 1;
+                        each item in category
+                          li.c-listCategory__item
+                            p
+                              input(type="checkbox", id='testb'+val)
+                              label(for= 'testb'+val )= item.name
+                          -val++;
+          
+    include ../blocks/footer
+    
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="source/transpiled_js/materialize.min.js")
+    //script(src="source/transpiled_js/jquery.pinto.min.js")
+    script(src="source/transpiled_js/slick.js")
+    script(src="source/transpiled_js/script.js")

@@ -1,0 +1,53 @@
+include ../settings/variables
+include ../components/mixins
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Tienda FitoEspinosa
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet" href="https://file.myfontastic.com/Je2qVQFHWdpjAg3hYktk9P/icons.css")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+  body
+    include ../blocks/header
+    
+    .container
+      .row
+        .col.s12
+          h5.c-sectionTitle Separator
+      .row
+        .col.s12.m4
+          a.waves-effect.waves-light.btn.modal-trigger(href="#preview") modal 1
+        .col.s12.m4
+          a.waves-effect.waves-light.btn.modal-trigger(href="#preview2") modal 2
+        .col.s12.m4
+          a.waves-effect.waves-light.btn.modal-trigger(href="#preview3") modal 3
+    
+    #preview.modal
+      .modal-content
+        h4 Modal Header
+        p A bunch of text
+      .modal-footer
+        a(href="#!").modal-action.modal-close.waves-effect.waves-green.btn-flat Agree
+    #preview2.modal.modal-fixed-footer
+      .modal-content
+        h4 Modal Header
+        p A bunch of text
+      .modal-footer
+        a(href="#!").modal-action.modal-close.waves-effect.waves-green.btn-flat Agree
+    #preview3.modal.bottom-sheet
+      .modal-content
+        h4 Modal Header
+        p A bunch of text
+      .modal-footer
+        a(href="#!").modal-action.modal-close.waves-effect.waves-green.btn-flat Agree
+
+          
+    include ../blocks/footer
+    
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="source/transpiled_js/materialize.min.js")
+    script(src="source/transpiled_js/jquery.pinto.min.js")
+    script(src="source/transpiled_js/script.js")

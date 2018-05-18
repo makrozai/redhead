@@ -1,0 +1,49 @@
+include ../settings/variables
+include ../components/mixins
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Tienda FitoEspinosa
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet" href="https://file.myfontastic.com/Je2qVQFHWdpjAg3hYktk9P/icons.css")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+  body
+    include ../blocks/header
+    
+    .container
+      .row
+        .col.s12
+          h5.c-sectionTitle buttons
+        .col.s12.u-margin__tb--small
+          a(href="#!").waves-effect.waves-light.btn.u-margin__lr--small button
+          a(href="#!").waves-effect.waves-light.btn.u-margin__lr--small.red button
+          a(href="#!").waves-effect.waves-light.btn.u-margin__lr--small.green button
+          a(href="#!").waves-effect.waves-light.btn.u-margin__lr--small.blue button
+          a(href="#!").waves-effect.waves-light.btn.u-margin__lr--small.yellow button
+          a(href="#!").waves-effect.waves-light.btn.u-margin__lr--small.purple button
+        .col.s12.u-margin__tb--small
+          a(href="#!").waves-effect.waves-light.btn-large.u-margin__lr--small button large
+          a(href="#!").waves-effect.waves-light.btn-large.u-margin__lr--small.red button large
+          a(href="#!").waves-effect.waves-light.btn-large.u-margin__lr--small.green button large
+          a(href="#!").waves-effect.waves-light.btn-large.u-margin__lr--small.blue button large
+          a(href="#!").waves-effect.waves-light.btn-large.u-margin__lr--small.yellow button large
+          a(href="#!").waves-effect.waves-light.btn-large.u-margin__lr--small.purple button large
+      .row
+        .col.s12
+          h5.c-sectionTitle Linear Buttons
+        .col.s12.u-margin__tb--small
+          a(href="#!").waves-effect.waves-light.btn.c-button__linear.u-margin__lr--small Linear Button
+          a(href="#!").waves-effect.waves-light.btn.c-button__linear.c-button__linear--reverse.u-margin__lr--small Linear Button
+          a(href="#!").waves-effect.waves-light.btn-large.c-button__linear.u-margin__lr--small Linear Button
+          a(href="#!").waves-effect.waves-light.btn-large.c-button__linear.c-button__linear--reverse.u-margin__lr--small Linear Button
+          
+    include ../blocks/footer
+    
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="source/transpiled_js/materialize.min.js")
+    //script(src="source/transpiled_js/jquery.pinto.min.js")
+    script(src="source/transpiled_js/slick.js")
+    script(src="source/transpiled_js/script.js")

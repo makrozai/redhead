@@ -1,0 +1,120 @@
+include settings/variables
+include components/mixins.pug
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Tienda FitoEspinosa
+    link(rel="shortcut icon" href="http://fitoespinosa.com/wp-content/uploads/2018/03/favicon.png")
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet" href="https://file.myfontastic.com/Je2qVQFHWdpjAg3hYktk9P/icons.css")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+  body
+    include blocks/header
+
+    .u-gray.u-padding__bottom--small
+      section.u-padding__top--small
+        -
+          var categorya = {
+            "subtitle":"CARRITO DE COMPRAS"
+          };
+        +sectionSeparator(categorya).o-sectionSeparator--gray
+      .container
+        form(action="").row
+          .col.s12.m12
+
+            section
+              table.o-table.o-table__personality.responsive-table
+                thead
+                  tr
+                    th PRODUCTO
+                    th CANTIDAD
+                    th PRECIO UNITARIO
+                    th PRECIO TOTAL
+                tbody
+                  each val in [1,2,3,4]
+                    tr
+                      td
+                        .c-productCart
+                          .c-productCart__image
+                            img(src="source/img/thumb1.jpg", alt="")
+                          .c-productCart__info
+                            h6 Nombre del producto
+                            span CATEGORÍA
+                            p Descripción de variables seleccionadas
+                      td.c-productPrice.u-padding__lr--small
+                        .c-productQty
+                          .o-product__count
+                            a(href="#!").col.u-padding__lr--none.o-product__count-plus
+                              i.fas.fa-minus
+                            .input-field.col.s2.u-margin__top--none.o-product__count--full
+                              input(type="text" value="1" id="numberA" + val).validate
+                              label(for="numberA" + val)
+                            a(href="#!").col.u-padding__lr--none.o-product__count-plus
+                              i.fas.fa-plus
+                        p Actualizar
+                        a(href="#!") guardar a favoritos
+                          i.material-icons star
+                      td.c-productPrice.u-padding__lr--small
+                        .c-productNews__price.c-productNews__full
+                          span 10,000
+                      td.c-productPrice.u-padding__lr--small
+                        a(href="#!").c-productPrice__close
+                          i.fas.fa-times
+                        .c-productNews__price.c-productNews__full
+                          span.c-productNews__price--big 10,000
+
+            .row.u-margin__top--medium
+              .col.s12.m6.l4.offset-l8
+                .c-productPrice__cart
+                  .c-productPrice__cart-name
+                    p TOTAL ESTIMADO 
+                  .c-productPrice__cart-val
+                    p 10,240.00
+                button.waves-effect.waves-light.btn.u-margin__tb--small.u-block.u-text__black.u-text__medium
+                  i.fas.fa-arrow-right.right
+                  | Procesar a check out
+
+                .o-product__save.o-product__save--gray
+                  p * Nota sobre los impuestos, si aplica.
+
+                .o-product__contact.o-product__contact--gray
+                  p O contáctanos si te queda alguna duda
+
+                .o-product__social.o-product__social--gray
+                  span
+                    i.fab.fa-whatsapp.fa-2x
+                    | +51 990 048 084
+                  span
+                    i.far.fa-envelope.fa-2x
+                    | Galería PE
+
+      section.u-padding__tb--medium
+        +sectionSeparator(section).o-sectionSeparator--bgray
+          .row.u-margin__bottom--none
+            .col.s12
+              section.novedades.c-productNews__container
+                each val in [1,2,3,4,5,6,7,8,9]
+                  div
+                    .c-productNews
+                      .c-productNews__image
+                        img(src="source/img/products/"+ val + ".jpg", alt="")
+                        a(href="#!") comprar
+                          i.fas.fa-gift
+                          | ahora
+                      .c-productNews__info
+                        .c-productNews__name
+                          h6 "La reina"
+                          p PINTURA
+                        .c-productNews__price
+                          span 240
+
+    include blocks/footer
+    
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="source/transpiled_js/materialize.min.js")
+    script(src="source/transpiled_js/jquery.pinto.min.js")
+    script(src="source/transpiled_js/slick.js")
+    script(src="source/transpiled_js/script.js")

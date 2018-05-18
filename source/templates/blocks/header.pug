@@ -1,0 +1,93 @@
+.o-buttonTop.scale-transition.scale-out
+  a.btn-floating.waves-effect.waves-light(href="#!")
+    i.fas.fa-angle-up
+header.o-header
+  .container
+    .row.u-margin__tb--small.u-flex
+      .col.s12.m5.o-header__message.hide-on-med-and-down  
+        img(src="source/img/frase-header.png", alt="").img-responsive
+      .col.s12.m3.o-header__main
+        a(href="index.html")
+          img(src="source/img/logo.gif", alt="").o-header__logo
+      .col.s12.m5.right-align.hide-on-med-and-down
+        ul.o-header__asset
+          li 
+            a(href="#modal2").u-hover__linear.u-hover__linear--base.modal-trigger Mi cuenta
+          li
+            a(href="#modal1").u-hover__linear.u-hover__linear--base.modal-trigger Registrarse
+          li
+            a(href="#!") 
+              img(src="source/img/idioma/eng.png", alt="").img-responsive
+          li
+            a(href="#!").dropdown-button.o-header__badge(data-activates='dropShop')
+              i.material-icons.icon-shop
+              span 10
+            ul#dropShop.dropdown-content.o-dropCar
+              li
+                p.center-align.o-dropCar__name CARRITO
+              li
+                .o-dropCar__item
+                  .o-dropCar__image
+                    img(src="source/img/products/8.jpg", alt="").responsive-img
+                  .o-dropCar__description
+                    p.o-dropCar__title Producto Título
+                    p.o-dropCar__quantity Cantidad : 1
+                  .o-dropCar__prices
+                    span 100
+                    a(href="#!") Editar
+              li
+                .o-dropCar__item
+                  .o-dropCar__image
+                    img(src="source/img/products/8.jpg", alt="").responsive-img
+                  .o-dropCar__description
+                    p.o-dropCar__title Producto Título
+                    p.o-dropCar__quantity Cantidad : 1
+                  .o-dropCar__prices
+                    span 100
+                    a(href="#!") Editar
+              li
+                .o-dropCar__item
+                  .o-dropCar__image
+                    img(src="source/img/products/8.jpg", alt="").responsive-img
+                  .o-dropCar__description
+                    p.o-dropCar__title Producto Título
+                    p.o-dropCar__quantity Cantidad : 1
+                  .o-dropCar__prices
+                    span 100
+                    a(href="#!") Editar
+              li
+                .o-dropCar__item
+                  a(href="#!").o-dropCar__complete Ver listado completo
+
+              li
+                .o-dropCar__item
+                  .o-dropCar__subtotal
+                    p ORDEN SUB-TOTAL
+                  .o-dropCar__prices
+                    span 
+                      b 400
+              li
+                .o-dropCar__button
+                  a(href="#!").waves-effect.waves-light.btn CHECK OUT
+  .row.u-margin__none
+    .col.s12.u-padding__lr--none
+      nav.o-header__menu
+        .nav-wrapper
+          a(href="#" data-activates="mobile-demo").button-collapse.o-header__bar
+            i.material-icons menu
+          ul#nav-mobile.hide-on-med-and-down.o-header__list
+            .container
+              each item in navlist
+                li.o-header__item
+                  a(href=item.ruta)= item.name
+              li.o-header__search
+                input(type="text" placeholder="Buscar").browser-default
+                i.fas.fa-search
+
+          ul.side-nav#mobile-demo
+            each item in navlist
+              li
+                a(href=item.ruta)= item.name
+
+  +modalRegister()
+  +modalLogin()

@@ -1,0 +1,310 @@
+mixin sectionSeparator(item)
+  .container&attributes(attributes)
+    .o-sectionSeparator
+      .row.center-align
+        if item.subtitle
+          .col.s12
+            h3.o-sectionSeparator__category #{item.subtitle}
+        //-.col.s12
+          h2.o-sectionSeparator__title #{item.title}
+            i.material-icons play_arrow
+        if(item.description !== '')
+          .col.s12
+            p.o-sectionSeparator__description #{item.description}
+        if block
+          .col.s12
+            block
+
+mixin articleList(items)
+  .container
+    .row
+      each item in items
+        .col.s12.m4
+          +article(item)
+
+mixin article(item)
+  a.c-article(href=item.link)
+    .c-article__image
+      img(src= item.image, alt="").responsive-img
+    .c-article__body
+      p.c-article__name= item.title
+
+mixin previewProducts(items)
+  .row.u-margin__none
+    each item in items
+      .col.s12.m6.l3
+        a.c-product(href=item.link)
+          .c-product__image
+            each img in item.images
+              img(src= img.link, alt="")
+          .c-product__body
+            h5.c-product__name= item.title
+          p.c-product__description Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+mixin previewProduct(item)
+  .c-productNews&attributes(attributes).u-padding__none
+    .c-productNews__image
+      img(src= item.image , alt="")
+      a(href= item.ruta) comprar
+        i.fas.fa-gift
+        | ahora
+    .c-productNews__info.c-productNews__info--nobottom.u-padding__lr--small
+      .c-productNews__name
+        h6= item.name
+        p= item.category
+      .c-productNews__price
+        span= item.price
+
+mixin previewProducts4(items)
+  .row.u-margin__none
+    each item in items
+      .col.s12.m6.l4
+        a.c-product(href=item.link)
+          .c-product__image
+            each img in item.images
+              img(src= img.link, alt="")
+          .c-product__body
+            h5.c-product__name= item.title
+          p.c-product__description Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+mixin sectionTitle(title,description)
+  .o-sectionSeparator__back.container.center-align.u-padding__lr--small
+    .row
+      .col.s12
+        h2.o-sectionSeparator__back--title= title
+      .col.s12
+        h5.o-sectionSeparator__back--subtitle= description
+
+mixin listCategory(title,items)
+  .c-listCategory&attributes(attributes)
+    h6.c-listCategory__title= title
+    ul
+      each item in items
+        li.c-listCategory__item
+          a(href= item.link).u-hover__linear.u-hover__linear--base= item.name
+
+mixin bannerCategory(filter,items,title)
+  each item in items
+    if(item.name == filter)
+      .c-desCategory.row&attributes(attributes)
+        .col.s12.m8
+          .c-desCategory__image
+            img(src= item.image, alt="").responsive-img
+        .col.s12.m4
+          .c-desCategory__content.center-align
+            if(title != 'notitle')
+              h2.c-desCategory__title.c-title__underline= item.name
+            p.c-desCategory__description= item.description
+            if(item.buttons)
+              each button in item.buttons
+                if(item.buttons)
+                  a.c-desCategory__button(href= button.link)= button.title
+
+mixin galleryProduct(items,size)
+  #blog-landing(data-atsize="4")
+    each item in items
+      +previewProduct(item).pinto.z-depth-1
+
+mixin product(item,lorem)
+  .c-product.c-product--linear&attributes(attributes)
+      a(href= item.ruta).c-product__image
+        each image in item.images
+          if(lorem == 'lorem')
+            img(src="http://demandware.edgesuite.net/sits_pod54-pod55/dw/image/v2/AAOX_PRD/on/demandware.static/-/Sites-catalog-master/default/dwc4122c91/hi-res/ushi-res/claridge_sofa_belfast_stone.jpg?sw=768&sh=768&sm=fit", alt="").responsive-img
+          else
+            img(src= image.link, alt="").responsive-img
+      .c-product__content
+          p.c-product__category= item.category
+          a(href="#!").c-product__name.u-margin__none= item.name
+          .c-product__data
+            p.c-product__price= item.price
+              spam 500.00
+            a(href=item.ruta).c-product__button.waves-effect.waves.btn
+              i.material-icons shopping_cart
+
+
+mixin bannerSlide(title,image,button,description)
+  .o-bannerSlide
+    p.o-bannerSlide__title= title
+    .o-bannerSlide__image
+      img(src= image, alt="" style="background-size:auto 100%;background-repeat:no-repeat;")
+    a(href="#!").o-bannerSlide__button.waves-effect.waves-light.btn= button
+    p.o-bannerSlide__description= description
+
+mixin breadCrumbs(...items)
+  .c-history&attributes(attributes)
+    each item in items
+      a.breadcrumb.c-history__item(href="#!")= item
+
+mixin modalRegister()
+  #modal1.modal.o-login.o-login--small
+    a(href="#!").o-login__close.modal-close
+      i.material-icons close
+    .modal-content
+      h4.o-login__title.center-align.u-margin__none Registrate
+      .row.u-margin__none
+        form.col.s12
+          .row.u-margin__none
+            .col.s12.center-align
+              a.waves-effect.waves-light.btn.u-margin__tb--small.c-button__linear.c-button__linear--reverse
+                i.material-icons.left.icon-facebook 
+                | Registrate con Facebook
+            .col.s12.center-align
+              a.waves-effect.waves-light.btn.c-button__linear.c-button__linear--reverse
+                i.material-icons.left.icon-google 
+                | Registrate con Google +
+            .col.s12.center-align
+              .c-textSeparator
+                p ó
+            .input-field.col.s12
+              input#first_name(type="text").validate
+              label(for="first_name") First Name
+            .input-field.col.s12
+              input#last_name(type="text").validate
+              label(for="last_name") Last Name
+            .input-field.col.s12
+              input#email(type="email").validate
+              label(for="email") Email
+            .input-field.col.s12
+              input#registerPass(type="password").validate
+              label(for="registerPass") Password
+            .col.s12.center-align
+              button.o-login__button.waves-effect.waves-light.btn submit
+            .col.s12
+              p.center-align 
+                i Al registrarte estas aceptando nuestros<br>
+                  a(href="#!") Condiciones de Uso y Política de Privacidad
+
+mixin modalLogin()
+  #modal2.modal.o-login.o-login--small
+    a(href="#!").o-login__close.modal-close
+      i.material-icons close
+    .modal-content
+      h4.o-login__title.center-align.u-margin__none Bienvenido
+      .c-textSeparator.center-align
+        p 
+          i Ingresa con tu email
+      .row.u-margin__none
+        form.col.s12
+          .row.u-margin__none
+            .input-field.col.s12
+              input#loginEmail(type="email").validate
+              label(for="loginEmail") Email Address
+            .input-field.col.s12
+              input#loginPass(type="email").validate
+              label(for="loginPass") Password
+            .col.s8
+              p OLVIDASTE TU CONTRASEÑA? 
+                a(href="#modal3").modal-trigger INGRESA AQUÍ
+              p NO TIENES CUENTA? 
+                a(href="#!") INGRESA AQUÍ
+            .col.s4.right-align
+              p.o-login__check
+                input(type="checkbox")#test5
+                label(for="test5") No cerrar sesión
+            .col.s12.center-align
+              button.o-login__button.waves-effect.waves-light.btn.u-margin__tb--small Iniciar Sesión
+            .col.s12.center-align
+              .c-textSeparator
+                p 
+                  i Ingresa con tu perfil en redes sociales
+            .col.s6.center-align
+              a.waves-effect.waves-light.btn.u-margin__tb--small.c-button__linear.c-button__linear--reverse
+                i.material-icons.left.icon-facebook 
+                | Facebook
+            .col.s6.center-align
+              a.waves-effect.waves-light.btn.u-margin__tb--small.c-button__linear.c-button__linear--reverse
+                i.material-icons.left.icon-google 
+                | Google+
+            //.col.s12.center-align
+              .c-textSeparator
+                p 
+                  i Continúa sin iniciar sesión
+            //-.col.s12.center-align
+              a.waves-effect.waves-light.btn.u-margin__tb--small.c-button__linear.c-button__linear--reverse
+                i.material-icons.right chevron_right 
+                | continúa como invitado
+            .col.s12
+              p.center-align 
+                i Tendras la opción de registrarte luego de tu compra<br>
+                  | Al seguir como invitado aceptas nuestro<br>
+                  a(href="#!") Acuerdo de Usuario y Politica de Privacidad
+
+
+mixin modalRecuperar()
+  #modal3.modal.o-login.o-login--small
+    a(href="#!").o-login__close.modal-close
+      i.material-icons close
+    .modal-content
+      h4.o-login__title.center-align.u-margin__none Bienvenido
+      .c-textSeparator.center-align
+        p 
+          i Restablecer Contraseña
+      p Proporcione el correo electrónico de su cuenta y le enviaremos un encale para restablecer su contraseña.
+      .row.u-margin__none
+        form.col.s12
+          .row.u-margin__none
+            .input-field.col.s12
+              input#loginEmailRecu(type="email").validate
+              label(for="loginEmailRecu") Email
+            .col.s4.right-align
+              a(href="#!") ingresa con tu email
+            .col.s12.center-align
+              button.o-login__button.waves-effect.waves-light.btn.u-margin__tb--small Enviar enlace
+            .col.s12.center-align
+              .c-textSeparator
+                p 
+                  i Ingresa con tu perfil en redes sociales
+            .col.s6.center-align
+              a.waves-effect.waves-light.btn.u-margin__tb--small.c-button__linear.c-button__linear--reverse
+                i.material-icons.left.icon-facebook 
+                | Facebook
+            .col.s6.center-align
+              a.waves-effect.waves-light.btn.u-margin__tb--small.c-button__linear.c-button__linear--reverse
+                i.material-icons.left.icon-google 
+                | Google+
+            //.col.s12.center-align
+              .c-textSeparator
+                p 
+                  i Continúa sin iniciar sesión
+            //-.col.s12.center-align
+              a.waves-effect.waves-light.btn.u-margin__tb--small.c-button__linear.c-button__linear--reverse
+                i.material-icons.right chevron_right 
+                | continúa como invitado
+            .col.s12
+              p.center-align 
+                i Tendras la opción de registrarte luego de tu compra<br>
+                  | Al seguir como invitado aceptas nuestro<br>
+                  a(href="#!") Acuerdo de Usuario y Politica de Privacidad
+
+mixin cardProduct(link,image,title,...enlace)
+  .c-product.u-padding__none
+    a(href= link).c-product__image
+      img(src=image, alt="")
+    p.c-product__title=title
+    each item in enlace
+      a(href="#!").c-product__link= item
+
+mixin postCard(title, description, button)
+  .o-postCard
+    .o-postCard__image
+      img(src="http://demandware.edgesuite.net/aaox_prd/on/demandware.static/-/Sites/default/v1476179152388/images/slot/landing/Furniture%20LP/JonathanAdler_FurnitureStory_LP.jpg", alt="")
+    .o-postCard__content
+      p.o-postCard__title.u-margin__none= title
+      p.o-postCard__description= description
+      a(href="#!").u-hover__linear= button
+
+mixin graySeparator(titleUp, description)
+  .o-graySeparator
+    .container
+      .row
+        .col.s12.center-align
+          p Explora nuestra tienda online | 10% de descuento
+            span los jueves y viernes de abril
+mixin sectionAcordion(title, required)
+  .o-sectionAcordion
+    h5.o-sectionAcordion__title= title
+    span.o-sectionAcordion__require= required
+    .o-sectionAcordion__content(class!=attributes.class)
+      if block
+        block

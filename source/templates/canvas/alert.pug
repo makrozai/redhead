@@ -1,0 +1,95 @@
+include ../settings/variables
+include ../components/mixins
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Tienda FitoEspinosa
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet" href="https://file.myfontastic.com/Je2qVQFHWdpjAg3hYktk9P/icons.css")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+  body
+    include ../blocks/header
+    
+    .container
+      .row
+        .col.s12.m6
+          .row
+            .col.s12
+              h5.c-sectionTitle Linear Alert
+            .col.s12
+              p.c-alert.c-alert--red Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              p.c-alert.c-alert--green Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              p.c-alert.c-alert--yellow Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              p.c-alert.c-alert--blue Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              span.c-alert.c-alert--blue Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .col.s12.m6
+          .row
+            .col.s12
+              h5.c-sectionTitle Background Alert
+            .col.s12
+              p.c-alert.red.lighten-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              p.c-alert.green.lighten-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              p.c-alert.yellow.darken-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              p.c-alert.blue.lighten-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              span.c-alert.blue.lighten-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .col.s12
+          .row
+            .col.s12
+              h5.c-sectionTitle Badges in Alerts
+            .col.s12
+              p.c-alert.c-alert--red Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+                span.new.badge.red.lighten-1 4
+            .col.s12
+              p.c-alert.red.lighten-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+                span.new.badge.white.red-text 4
+        .col.s12
+          .row
+            .col.s12
+              h5.c-sectionTitle Alert Disable
+            .col.s12
+              p.c-alert.grey.lighten-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+            .col.s12
+              p.c-alert.c-alert--grey Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ducimus sequi aperiam, officia doloremque, dolore illo.
+
+        .col.s12.m6
+          table.o-table.bordered.responsive-table
+            thead
+              tr
+                th Name
+                th Item Name
+                th Item Price
+            tbody
+              tr
+                td Alvin
+                td Eclair
+                td $0.87
+              tr
+                td Alan
+                td Jellybean
+                td $3.76
+              tr
+                td Jonathan
+                td Lollipop
+                td $7.00
+              tr
+                td Alvin
+                td Eclair
+                td $0.87
+          
+    include ../blocks/footer
+    
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="source/transpiled_js/materialize.min.js")
+    script(src="source/transpiled_js/jquery.pinto.min.js")
+    script(src="source/transpiled_js/script.js")

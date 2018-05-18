@@ -1,0 +1,42 @@
+footer.o-footer
+  .o-footer__copy
+    .container
+      .o-footer__copy-message
+        i.left.far.fa-envelope.fa-2x
+        | Únete a nuestra lista!
+      form(action="").o-footer__copy-input
+        input#disabled(type="text" placeholder="Email").browser-default
+        button.o-footer__copy-button 
+          i.fas.fa-arrow-right
+          |Suscríbete 
+  .u-shadow
+  .container
+    .row.u-margin__tb--small
+      each item in footerfito2
+        .col.l3.s12
+          h6.o-footer__title.u-padding__tb--small= item.title
+          ul.o-footer__list
+            each link in item.list
+              li.o-footer__item.u-padding__tb--chick
+                if link.link
+                  a(href="#!").u-hover__linear= link.name
+                else
+                  p.u-margin__none= link.name
+      
+      //-.col.l2.s12
+        h6.o-footer__title.u-padding__tb--small.u-margin__tb--small MAP
+        img(src="http://demandware.edgesuite.net/aaox_prd/on/demandware.static/Sites-jonathan-adler-us-Site/-/default/dw8e56e743/images/store-locator-null.png", alt="").responsive-img
+    .row.u-margin__none.u-padding__tb--medium.valign-wrapper.u-wrap.u-flex__cross--end.u-border__top--small
+      .col.s12.m9
+        p.u-margin__none.o-footer__title Fito Espinosa Galería
+        p.u-margin__none Calle Grau 324 Miraflores, Lima - Perú
+        p.u-margin__none T+511 44 55 835 | +51 990048084 | info@fitoespinosa.com
+        p.u-margin__none Fito Espinosa. Copyright 2018. Todos los derechos reservados
+      .col.s12.m3
+        .right-align.c-rsocial
+          a(href="#!")
+            img(src="source/img/rs-facebook.png", alt="")
+          a(href="#!")
+            img(src="source/img/rs-twitter.png", alt="")
+          a(href="#!")
+            img(src="source/img/rs-youtube.png", alt="")

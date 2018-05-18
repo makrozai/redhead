@@ -1,0 +1,276 @@
+.u{
+  &-margin{
+    &__none{
+      margin: 0 !important;
+    }
+    &__tb{
+      &--small{
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      &--medium{
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+      &--large{
+        margin-top: 3em;
+        margin-bottom: 3em;
+      }
+    }
+    &__lr{
+      &--small{
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      &--medium{
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+      }
+    }
+    &__bottom{
+      &--none{
+        margin-bottom: 0 !important;
+      }
+      &--small{
+        margin-bottom: 1em;
+      }
+      &--medium{
+        margin-bottom: 2em;
+      }
+      &--large{
+        margin-bottom: 3em;
+      }
+    }
+    &__top{
+      &--none{
+        margin-top: 0;
+      }
+      &--small{
+        margin-top: 1em;
+      }
+      &--medium{
+        margin-top: 2em;
+      }
+      &--large{
+        margin-top: 3em;
+      }
+    }
+  }
+  &-padding{
+    &__none{
+      padding: 0 !important;
+    }
+    &__tb{
+      &--none{
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      &--chick{
+        padding-top: .2em;
+        padding-bottom: .2em;
+      }
+      &--small{
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+      &--medium{
+        padding-top: 2em;
+        padding-bottom: 2em;
+      }
+      &--large{
+        padding-top: 3em;
+        padding-bottom: 3em;
+      }
+      &--xlarge{
+        padding-top: 5em;
+        padding-bottom: 5em;
+      }
+    }
+    &__lr{
+      &--none{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      &--small{
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+      &--medium{
+        padding-left: 2em !important;
+        padding-right: 2em !important;
+      }
+    }
+    &__top{
+      &--none{
+        padding-top: 0;
+      }
+      &--chick{
+        padding-top: .2em;
+      }
+      &--small{
+        padding-top: 1em;
+      }
+      &--medium{
+        padding-top: 2em;
+      }
+      &--large{
+        padding-top: 3em;
+      }
+      &--xlarge{
+        padding-top: 5em;
+      }
+    }
+    &__bottom{
+      &--none{
+        padding-bottom: 0;
+      }
+      &--chick{
+        padding-bottom: .2em;
+      }
+      &--small{
+        padding-bottom: 1em;
+      }
+      &--medium{
+        padding-bottom: 2em;
+      }
+      &--large{
+        padding-bottom: 3em;
+      }
+      &--xlarge{
+        padding-bottom: 5em;
+      }
+    }
+  }
+  &-border{
+    &__top{
+      &--small{
+        border-top: 1px solid rgba($off-black,.5);
+      }
+    }
+  }
+
+  &-hover{
+    &__linear{
+      position: relative;
+      &:before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: $off-black;
+        transition:all .3s;
+      }
+      &:hover:before{
+        width: 100%;
+      }
+      &--base{
+        &:before{
+          background: $primary-color;
+        }
+      }
+    }
+  }
+  &-wrap{
+    flex-wrap:wrap;
+  }
+  &-flex{
+    display: flex;
+    &__main{
+      &--reverse{
+        > div:first-child{
+          @media #{$medium-and-up}{
+            order:1;
+          }
+        }
+      }
+    }
+    &__cross{
+      &--end{
+        align-items:flex-end;
+      }
+    }
+  }
+  &-block{
+    display: block;
+    width: 100%;
+  }
+  &-primary{
+    background:$primary-color !important;
+  }
+  &-gray{
+    background: lighten($secondary-color,60);
+  }
+  &-text{
+    &__black{
+      color: $off-black ;
+
+      &:hover{
+        color: white;
+      }
+    }
+    &__medium{
+      font-size: 1.4em !important;
+      
+      i{
+        font-size:1.4em;
+      }
+    }
+
+  }
+  &-shadow{
+    background:white;
+    height: 10px;
+    width: 100%;
+    position: relative;
+
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      width: 90%;
+      height: 5px;
+      box-shadow: 0 1px 10px rgba(black,.3); 
+      border-radius: 50%;
+    }
+    &:after{
+      content:"";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:white;
+      z-index: 3;
+    }
+
+    &--gray{
+      &:after{
+        background: #f2f2f3;
+      }
+    }
+  }
+  &-line-through{
+    text-decoration: line-through;
+  }
+
+  &-container{
+    &__small{
+      max-width: 600px;
+    }
+    &__medium {
+      max-width: 800px !important;
+    }
+    &__large{
+      max-width: 1000px;
+    }
+  }
+  &-full{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,108 @@
+include ../settings/variables
+include ../components/mixins.pug
+<!DOCTYPE html>
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Tienda FitoEspinosa
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet" href="https://file.myfontastic.com/Je2qVQFHWdpjAg3hYktk9P/icons.css")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+  body
+    include ../blocks/header
+
+    +sectionTitle('HELLO HOLIDAY', 'Sensational Seasonables Are Here')
+    
+    include ../components/slider
+
+    .container
+      .row.valign-wrapper.u-wrap
+        .col.s12.m6.right-align
+          img(src="source/img/perfil.jpg", alt="").responsive-img
+        .col.s12.m6
+          h2 Sobre Fito Espinosa
+          p When asked, “If you could wish for one thing only, what would that wish be?” almost everyone; from beauty pagent contestants, to politicians, to religious leaders, to children, to the average person on the street states, “Peace On Earth” or “An end to all wars”. Those wishes, while exemplary…
+          a(href="#!") ir al sitio
+
+    //-+sectionSeparator(section)
+    //-.container.center-align
+      img(src="http://demandware.edgesuite.net/aaox_prd/on/demandware.static/-/Sites/default/dw5d5f3101/images/slot/homepage/110117_HolidayLaunch/caracastable.jpg", alt="").responsive-img
+    -
+      var campana = {
+        "subtitle":"Etiqueta",
+        "title":"TITULO DE CAMPAÑA",
+        "description":"descripción de campaña, vista de 3 columnas"
+      };
+    +sectionSeparator(campana)
+      +previewProducts(products)
+
+    +sectionSeparator(campana)
+      +previewProducts(products)
+
+    .container
+      .row
+        .col.s12
+          h4 CONTACTO RÁPIDO
+        .col.s12
+          form.row
+            .col.s12.m6
+              .row
+                .input-field.col.s12
+                  input(id="nombreContacto" type="text").validate
+                  label(for="nombreContacto") Nombres
+                .input-field.col.s12
+                  input(id="apellidoContacto" type="text").validate
+                  label(for="apellidoContacto") Apellidos
+                .input-field.col.s12
+                  input(id="emailContacto" type="email").validate
+                  label(for="emailContacto") Email
+            .col.s12.m6
+              .row
+                .input-field.col.s12
+                  textarea#textarea1.materialize-textarea
+                  label(for="textarea1") Textarea
+            .col.s12.center-align
+              button.waves-effect.waves-light.btn.c-button__linear Enviar
+
+    
+    .container
+      .row.valign-wrapper.u-wrap
+        .col.s12.m6
+          img(src="http://demandware.edgesuite.net/aaox_prd/on/demandware.static/-/Sites/default/dw95c3145c/images/slot/homepage/110117_HolidayLaunch/camille.jpg", alt="").responsive-img
+        .col.s12.m6
+          i Etiqueta
+          h5 Titulo del producto
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod culpa nihil aut quam.
+          a(href="#!").waves-effect.waves-light.btn.c-button__linear CTA info
+      .row.valign-wrapper.u-wrap.u-flex__main--reverse
+        .col.s12.m6
+          img(src="http://demandware.edgesuite.net/aaox_prd/on/demandware.static/-/Sites/default/dw95c3145c/images/slot/homepage/110117_HolidayLaunch/camille.jpg", alt="").responsive-img
+        .col.s12.m6
+          i Etiqueta
+          h5 Titulo del producto
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod culpa nihil aut quam.
+          a(href="#!").waves-effect.waves-light.btn.c-button__linear CTA info
+    
+
+    .container
+      .row.u-padding__tb--xlarge
+        .col.s12.m6
+          h3 Título Principal para destacado de una columna
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minus alias facilis nisi, fugiat id necessitatibus placeat doloribus quaerat. Temporibus reiciendis itaque, illum incidunt, odit ipsum voluptates explicabo totam fuga?
+          a(href="#!").waves-effect.waves-light.btn.c-button__linear CTA info
+    //-.container.center-align
+      img(src="http://demandware.edgesuite.net/aaox_prd/on/demandware.static/-/Sites/default/dw95c3145c/images/slot/homepage/110117_HolidayLaunch/camille.jpg", alt="").responsive-img
+
+    //-+sectionSeparator(trending)
+
+    //-+articleList(articles)
+
+
+    include ../blocks/footer
+    
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="source/transpiled_js/materialize.min.js")
+    script(src="source/transpiled_js/slick.js")
+    script(src="source/transpiled_js/script.js")
