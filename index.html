@@ -1,8 +1,74 @@
 <!DOCTYPE html>
-<html lang="es"></html>
-<head>
-  <meta charset="UTF-8"/>
-  <title>red head</title>
-  <link rel="stylesheet" href="dist/css/app.css"/>
-</head>
-<body></body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>red head</title>
+    <link rel="stylesheet" href="dist/css/app.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  </head>
+  <body>
+    <header class="container">
+      <div class="row">
+        <div class="col s12 m4">
+          <p>English</p>
+        </div>
+        <div class="col s12 m4">
+          <p class="center-align">Compare / Wishlist / Log In</p>
+        </div>
+        <div class="col s12 m4">
+          <p class="right-align">social</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m4">
+          <form action="">
+            <div class="row">
+              <div class="input-field col s6">
+                <input class="validate" id="first_name" type="text"/>
+                <label for="first_name">Search</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col s12 m4 center-align">
+          <h1 class="o-title">RED HEAD COFFEE SHOP</h1>
+        </div>
+      </div>
+      <div class="row">
+        <nav class="o-menu">
+          <div class="nav-wrapper"><a class="sidenav-trigger" href="#" data-target="mobile-demo"><i class="material-icons">menu</i></a>
+            <ul class="hide-on-med-and-down" id="nav-mobile">
+              <li><a href="sass.html">HOME</a></li>
+              <li><a href="sass.html">NOSOTROS</a></li>
+              <li><a href="sass.html">CARTA</a></li>
+              <li><a href="sass.html">BLOG</a></li>
+              <li><a href="sass.html">CONTACTO</a></li>
+            </ul>
+          </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="sass.html">Sass</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row u-flex u-wrap">
+          <div class="col s12 m8"><img class="u-image o-banner__image" src="source/images/banner.png" alt=""/></div>
+          <div class="col s12 m4">
+            <div class="row u-margin__none">
+              <div class="col s12"><img class="u-image" src="source/images/favorite.png" alt=""/></div>
+              <div class="col s12">
+                <div class="c-card center-align white-text u-padding__tb--medium u-margin__top--small">
+                  <p class="c-card__title">super sale!</p><a class="c-card__button waves-effect waves-light btn" href="">View now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main><script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="source/transpiled_js/materialize.js"></script>
+<script src="source/transpiled_js/script.js"></script>
+  </body>
+</html>

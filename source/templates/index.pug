@@ -1,8 +1,57 @@
 <!DOCTYPE html>
 html(lang="es")
-head
-  meta(charset="UTF-8")
-  title red head
-  link(rel="stylesheet", href="dist/css/app.css")
-body
-  
+  head
+    meta(charset="UTF-8")
+    title red head
+    link(rel="stylesheet", href="dist/css/app.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+  body
+    header.container
+      .row
+        .col.s12.m4
+          p English
+        .col.s12.m4
+          p.center-align Compare / Wishlist / Log In
+        .col.s12.m4
+          p.right-align social
+
+      .row
+        .col.s12.m4
+          form(action="")
+            .row
+              .input-field.col.s6
+                input(id="first_name" type="text" class="validate")
+                label(for="first_name") Search
+        .col.s12.m4.center-align
+          h1.o-title RED HEAD COFFEE SHOP
+      .row
+        nav.o-menu
+          .nav-wrapper
+            a(href="#" data-target="mobile-demo").sidenav-trigger
+              i.material-icons menu
+
+            ul#nav-mobile.hide-on-med-and-down
+              each val in ['HOME','NOSOTROS','CARTA','BLOG','CONTACTO']
+                li
+                  a(href="sass.html")= val
+        ul.sidenav#mobile-demo
+          li
+            a(href="sass.html") Sass
+    main
+      .container
+        .row.u-flex.u-wrap
+          .col.s12.m8
+            img(src="source/images/banner.png", alt="").u-image.o-banner__image
+          .col.s12.m4
+            .row.u-margin__none
+              .col.s12
+                img(src="source/images/favorite.png", alt="").u-image
+              .col.s12
+                .c-card.center-align.white-text.u-padding__tb--medium.u-margin__top--small
+                  p.c-card__title super sale!
+                  a(href="").c-card__button.waves-effect.waves-light.btn View now
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="source/transpiled_js/materialize.js"></script>
+    <script src="source/transpiled_js/script.js"></script>
