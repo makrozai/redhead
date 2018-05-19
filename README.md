@@ -1,4 +1,4 @@
-# Athelas static boilerplate
+# DreamCodes static boilerplate
 
 Ahora con **Pug**
 
